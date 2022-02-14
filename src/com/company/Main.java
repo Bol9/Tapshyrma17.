@@ -8,22 +8,23 @@ public class Main {
 	// write your code here
         Animals[] animals = {new Shark(), new Turtle(), new Eage()};
 
-        String[] sharks ={};
-        String[] turtles ={};
-        String[] eages={};
+        Shark[] sharks ={};
+        Turtle[] turtles ={};
+        Eage[] eages={};
 
 
         for (Animals animal:animals) {
             System.out.println(animal.getClass());
             if(animal instanceof Shark){
-                sharks =new String[] {animal.getClass().getName()};
+               sharks = new Shark[]{(Shark) animal};
 
             }else if(animal instanceof Turtle){
-                turtles = new String[]{animal.getClass().getName()};
+                turtles = new Turtle[]{(Turtle) animal};
             }else {
-                eages = new String[]{animal.getClass().getName()};
+                eages = new Eage[]{(Eage) animal};
             }
         }
+
         System.out.println(Arrays.toString(sharks));
         System.out.println(Arrays.toString(turtles));
         System.out.println(Arrays.toString(eages));
